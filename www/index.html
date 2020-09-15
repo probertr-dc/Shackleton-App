@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Shackleton</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+<body>
+    <ons-page>
+      <div style="text-align: center; margin-top: 200px">
+        <p>
+          <ons-input id="username" placeholder="Username" modifier="underbar"></ons-input>
+        </p>
+        <p>
+          <ons-input
+          id="password"
+          placeholder="Password"
+          type="password"
+          modifier="underbar">
+          </ons-input>
+        </p>
+        <p>
+          <ons-button>Sign in</ons-button>
+        </p>
+      </div>
+    </ons-page>
+    <div id="wrapper">
+        <div id="header">
+            <img src="shackletonicon.jpg" alt="Image of Shackleton" />
+            <h2>Ernest Shackleton (1874 - 1922)</h2>
+        </div>
+        <div id="nav">
+            <ul>
+                <li>Shackleton's Life</li>
+                <li>Dulwich College</li>
+                <li>Endurance Expedition</li>
+                <li>James Caird</li>
+            </ul>
+        </div>
+        <div id="container">
+            <h3>Shackleton's Life</h3>
+            <p class="snippet"><a href="https://en.wikipedia.org/wiki/Ernest_Shackleton">Sir Ernest Shackleton</a> was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.</p>
+            <p class="snippet">He was one of the principal figures of the period known as the Heroic Age of Antartic Exploration. Educated at Dulwich College and having ignored his father's wishes that he become a doctor he joined the merchant navy. Of many quotes one of his most famous is,<span id="quote">"Difficulties are just things to overcome, after all."</span></p>
+            <p class="snippet">During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia.</p>
+        </div>
+        <div id="quiz">
+            <h3>Quiz</h3>
+            <p>How far is it (according to Shackleton's wikipedia page) from Elephant Island to South Georgia in Nautical Miles? <span id="ans" style="color: red"></span></p>
+            <button id="x">Check Answer</button>
+        </div>
+        <div id="footer">
+            <p>Thank you for visiting my webpage</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <div style="clear: both"></div>
+</body>
+</html>
