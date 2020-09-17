@@ -3,7 +3,8 @@ function CheckAnswer() {
 }
 function Login() {
     if (document.getElementById("username").value == "Rory" && document.getElementById("password").value == "1233456") {
-        ons.notification.alert("Login Successful");
+        var navigator = document.getElementById("navigator");
+        navigator.push_page("shackleton.html");
     }
     else {
         ons.notification.alert("Login Failed");
