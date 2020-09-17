@@ -30,6 +30,10 @@
     </ons-navigator>
     <ons-template id="shackleton.html">
         <ons-page id="shackleton">
+            <ons-toolbar id="homeToolbar">
+                <div class="left">Home</div>
+                <div class="center" onclick="quiz()">Quiz</div>
+            </ons-toolbar>
             <img src="shackletonicon.jpg" alt="Image of Shackleton" />
             <h2>Ernest Shackleton (1874 - 1922)</h2>
             <ul>
@@ -42,6 +46,18 @@
             <p><a href="https://en.wikipedia.org/wiki/Ernest_Shackleton">Sir Ernest Shackleton</a> was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.</p>
             <p>He was one of the principal figures of the period known as the Heroic Age of Antartic Exploration. Educated at Dulwich College and having ignored his father's wishes that he become a doctor he joined the merchant navy. Of many quotes one of his most famous is,<span id="quote">"Difficulties are just things to overcome, after all."</span></p>
             <p>During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia.</p>
+        </ons-page>
+    </ons-template>
+    <ons-template id="quiz.html">
+        <ons-page>
+            <ons-toolbar id="quizToolbar">
+                <div class="left" onclick="home()">Home</div>
+            </ons-toolbar>
+            <div id="quiz">
+                <h3>Quiz</h3>
+                <p>How far is it (according to Shackleton's wikipedia page) from Elephant Island to South Georgia in Nautical Miles? <span id="ans"></span></p>
+                <button id="x" onclick="CheckAnswer()">Check Answer</button>
+            </div>
         </ons-page>
     </ons-template>
     <script src="index.js"></script>

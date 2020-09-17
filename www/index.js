@@ -10,4 +10,15 @@ function Login() {
         ons.notification.alert("Login Failed");
     }
 }
+function CheckAnswer() {
+    ans.textContent = "800 nautical miles";
+}
+function quiz() {
+    var navigator = document.getElementById("navigator");
+    navigator.pushPage("quiz.html");
+}
+function home() {
+    var navigator = document.getElementById('navigator');
+    navigator.popPage();
+}
 document.getElementById("signIn").onclick = Login;
