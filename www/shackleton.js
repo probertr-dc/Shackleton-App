@@ -5,3 +5,4 @@ function OpenMenu() {
 function hello() {
     document.getElementById("no").textContent = "hello";
 }
+document.getElementById("but").onclick = hello;
