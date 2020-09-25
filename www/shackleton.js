@@ -3,5 +3,5 @@ function OpenMenu() {
     document.getElementById("menu").open();
 }
 function hello() {
-    console.log("hello");
+    document.getElementById("no").textContent = "hello";
 }
