@@ -1,15 +1,5 @@
 <ons-page id="login">
-    <script>
-        function Login() {
-            if (document.getElementById("username").value == "Rory" && document.getElementById("password").value == "123456") {
-                var navigator = document.getElementById("navigator");
-                navigator.resetToPage("shackleton.html");
-            }
-            else {
-                ons.notification.alert("Login Failed");
-            }
-        }
-    </script>
+    <script src="login.js"></script>
     <div style="text-align: center; margin-top: 200px">
         <p>
             <ons-input id="username" placeholder="Username" modifier="underbar"></ons-input>
