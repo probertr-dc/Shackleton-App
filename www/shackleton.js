@@ -1,3 +1,3 @@
-function OpenMenu() {
-    console.log("Hello");
+function openMenu() {
+    document.getElementById('menu').open();
 }
