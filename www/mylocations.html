@@ -1,13 +1,17 @@
 <ons-page id="mylocations">
     <script>
-        function show_title() {
+        function show_location() {
             var title = localStorage.getItem("ShackletonApp");
             document.getElementById("my_loc").textContent = title;
+            var pic_URI = localStorage.getItem("MyAppPicture");
+            var pic = document.getElementById("pic_display");
+            pic.src = pic_URI;
         }
     </script>
     <h2 align='center'>My Locations</h2>
+    <p><img id='pic_display' height="200"></p>
     <h3 id='my_loc'></h3>
-    <ons-button id="Reveal Location" onClick='show_title()'>
+    <ons-button id="Reveal Location" onClick='show_location()'>
         Refresh
     </ons-button>
 </ons-page>
