@@ -6,6 +6,12 @@
         </p>
         <ons-list-header>Save the location</ons-list-header>
         <ons-button id="Save details" onClick='save_details()'>Save</ons-button>
+        <ons-list-header>Add a live picture</ons-list-header>
+        <ons-button id="cameraTakePicture" onClick='snapPicture()'>
+            Click
+            to snap
+        </ons-button>
+        <p> <img id="myImage" height="70" /><p>
     </ons-list>
     <script>
         function save_details() {
