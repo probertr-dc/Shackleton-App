@@ -1,6 +1,16 @@
-<ons-page id="mylocations">
-    <div id="content">
-        <h3>Add a new location</h3>
-        <p>Not yet supported</p>
-    </div>
+<ons-page id="addlocations">
+    <ons-list>
+        <ons-list-header>Type in a name for your location</ons-list-header>
+        <p>
+            <ons-input id="loc_title" modifier="underbar" placeholder="EnterLocation Name"></ons-input>
+        </p>
+        <ons-list-header>Save the location</ons-list-header>
+        <ons-button id="Save details" onClick='save_details()'>Save</ons-button>
+    </ons-list>
+    <script>
+        function save_details() {
+            var box = document.getElementById("loc_title");
+            localStorage.setItem("ShackletonApp", box.value);
+        }
+    </script>
 </ons-page>

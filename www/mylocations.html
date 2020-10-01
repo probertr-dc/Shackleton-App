@@ -1,6 +1,13 @@
 <ons-page id="mylocations">
-    <div id="content">
-        <h3>My locations</h3>
-        <p>There are currently no locations</p>
-    </div>
+    <script>
+        function show_title() {
+            var title = localStorage.getItem("ShackletonApp");
+            document.getElementById("my_loc").textContent = title;
+        }
+    </script>
+    <h2 align='center'>My Locations</h2>
+    <h3 id='my_loc'></h3>
+    <ons-button id="Reveal Location" onClick='show_title()'>
+        Refresh
+    </ons-button>
 </ons-page>
