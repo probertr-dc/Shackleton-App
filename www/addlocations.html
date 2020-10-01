@@ -19,6 +19,7 @@
             localStorage.setItem("ShackletonApp", box.value);
         }
         function snapPicture() {
+            console.log("Hello");
             navigator.camera.getPicture(successCallback, FailCallback, {
                 quality: 50,
                 destinationType: Camera.DestinationType.FILE_URI,
