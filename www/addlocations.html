@@ -1,33 +1,11 @@
-<ons-page id="addlocations">
-    <ons-list>
-        <ons-list-header>Type in a name for your location</ons-list-header>
-        <p>
-            <ons-input id="loc_title" modifier="underbar" placeholder="EnterLocation Name"></ons-input>
-        </p>
-        <ons-list-header>Save the location</ons-list-header>
-        <ons-button id="Save details" onClick='save_details()'>Save</ons-button>
-        <ons-list-header>Add a live picture</ons-list-header>
-        <ons-button id="cameraTakePicture" onClick='snapPicture()'>
-            Click
-            to snap
-        </ons-button>
-        <p> <img id="myImage" height="70" /><p>
-    </ons-list>
+<ons-page id="addlocations.html">
     <script>
         function save_details() {
-            var box = document.getElementById("loc_title");
-            localStorage.setItem("ShackletonApp", box.value);
-        }
-        function successCallback(imageURI) {
-            var image = document.getElementById('myImage');
-            // display image
-            image.src = imageURI;
-            // save image path to local storage
-            localStorage.setItem("ShackletonPicture", imageURI);
-        }
-        function FailCallback(message) {
-            alert('Error!!!: ' + message);
-        }
+            var title = document.getElementById('loc_title').value;
+            alert(title);
+            localStorage.setItem("MyAppLocation", title);
+        };
+
         function snapPicture() {
             navigator.camera.getPicture(successCallback, FailCallback, {
                 quality: 50,
@@ -37,6 +15,70 @@
                 targetWidth: 600,
                 saveToPhotoAlbum: true
             });
-        }        
+            //Success Callback
+            function successCallback(imageURI) {
+                //Display image
+                var image = document.getElementById('myImage');
+                image.src = imageURI;
+                localStorage.setItem("MyAppPicture", imageURI);
+            }
+            //Error CallBack
+            function FailCallback(message) {
+                alert('Error!!!: ' + message);
+            }
+        };
+
+        function get_position() {
+            navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { enableHighAccuracy: true });
+
+            function onGeoSuccess(position) {
+                Latitude = position.coords.latitude;
+                Longitude = position.coords.longitude;
+                localStorage.setItem("MyAppLong", Longitude);
+                localStorage.setItem("MyAppLat", Latitude);
+                setTimeout(function () {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: { lat: Latitude, lng: Longitude },
+                        zoom: 15
+                    });
+                }, 2000);
+            };
+            function onGeoError(error) {
+                console.log('code: ' + error.code + '\n' +
+                    'message: ' + error.message + '\n');
+            };
+        };
+
     </script>
+    <ons-list>
+
+        <ons-list-header>Type in a name for your location</ons-list-header>
+        <p> <ons-input id="loc_title" modifier="underbar" placeholder="Location Name"></ons-input></p>
+
+        <ons-list-header>Add a live picture</ons-list-header>
+        <ons-button id="cameraTakePicture" onClick='snapPicture()'>Click to snap</ons-button>
+        <p> <img id="myImage" height="70px"></img><p>
+
+            <ons-list-header> Add a map reference</ons-list-header>
+
+            <ons-button onCLick="loadScript(function() {get_position();})">
+                Click for map
+            </ons-button>
+
+
+            <div id="map" style="height:300px"></div>
+
+            <script>
+                function loadScript(callback) {
+                    var script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-HwkM6q2uTCDGCky01IgKwzIMxwjfJ4';
+                    document.getElementById("addlocations.html").appendChild(script);
+                    callback();
+                };
+            </script>
+
+            <ons-list-header>Save the location</ons-list-header>
+            <ons-button id="Save details" onClick='save_details()'>Save</ons-button>
+    </ons-list>
 </ons-page>
