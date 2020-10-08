@@ -7,6 +7,7 @@
         };
 
         function snapPicture() {
+            Console.log("Hello");
             navigator.camera.getPicture(successCallback, FailCallback, {
                 quality: 50,
                 destinationType: Camera.DestinationType.FILE_URI,
