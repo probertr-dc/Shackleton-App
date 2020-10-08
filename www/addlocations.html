@@ -18,6 +18,16 @@
             var box = document.getElementById("loc_title");
             localStorage.setItem("ShackletonApp", box.value);
         }
+        function successCallback(imageURI) {
+            var image = document.getElementById('myImage');
+            // display image
+            image.src = imageURI;
+            // save image path to local storage
+            localStorage.setItem("ShackletonPicture", imageURI);
+        }
+        function FailCallback(message) {
+            alert('Error!!!: ' + message);
+        }
         function snapPicture() {
             navigator.camera.getPicture(successCallback, FailCallback, {
                 quality: 50,
@@ -27,16 +37,7 @@
                 targetWidth: 600,
                 saveToPhotoAlbum: true
             });
-            function successCallback(imageURI) {
-                var image = document.getElementById('myImage');
-                // display image
-                image.src = imageURI;
-                // save image path to local storage
-                localStorage.setItem("ShackletonPicture", imageURI);
-            }
-            function FailCallback(message) {
-                alert('Error!!!: ' + message);
-            }
+            
         }        
     </script>
 </ons-page>
