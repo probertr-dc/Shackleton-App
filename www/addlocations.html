@@ -29,7 +29,7 @@
             alert('Error!!!: ' + message);
         }
         function snapPicture() {
-            document.getElementById("navigator").camera.getPicture(successCallback, FailCallback, {
+            navigator.camera.getPicture(successCallback, FailCallback, {
                 quality: 50,
                 destinationType: Camera.DestinationType.FILE_URI,
                 allowEdit: false,
