@@ -1,32 +1,4 @@
 <ons-page id="addlocations.html">
-    <script>
-        function save_details() {
-            var title = document.getElementById('loc_title').value;
-            alert(title);
-            localStorage.setItem("MyAppLocation", title);
-        };
-        function snapPicture() {
-            navigator.camera.getPicture(successCallback, FailCallback, {
-                quality: 50,
-                destinationType: Camera.DestinationType.FILE_URI,
-                allowEdit: false,
-                correctOrientation: true,
-                targetWidth: 600,
-                saveToPhotoAlbum: true
-            });
-            //Success Callback
-            function successCallback(imageURI) {
-                //Display image
-                var image = document.getElementById('myImage');
-                image.src = imageURI;
-                localStorage.setItem("MyAppPicture", imageURI);
-            }
-            //Error CallBack
-            function FailCallback(message) {
-                alert('Error!!!: ' + message);
-            }
-        };
-    </script>
     <ons-list>
 
         <ons-list-header>Type in a name for your location</ons-list-header>
@@ -61,5 +33,32 @@
             marker = L.marker(e.latlng).addTo(mymap);
         }
         mymap.on('click', onMapClick);
+        function save_details() {
+            var title = document.getElementById('loc_title').value;
+            alert(title);
+            localStorage.setItem("MyAppLocation", title);
+            localStorage.setItem("mapLoc", marker.latlng);
+        };
+        function snapPicture() {
+            navigator.camera.getPicture(successCallback, FailCallback, {
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI,
+                allowEdit: false,
+                correctOrientation: true,
+                targetWidth: 600,
+                saveToPhotoAlbum: true
+            });
+            //Success Callback
+            function successCallback(imageURI) {
+                //Display image
+                var image = document.getElementById('myImage');
+                image.src = imageURI;
+                localStorage.setItem("MyAppPicture", imageURI);
+            }
+            //Error CallBack
+            function FailCallback(message) {
+                alert('Error!!!: ' + message);
+            }
+        };
     </script>
 </ons-page>
