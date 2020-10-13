@@ -25,7 +25,7 @@
         zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoicnByb2JlcnQiLCJhIjoiY2tnN3dnMWxwMGJidjJybDM3M2hiOHpkciJ9.YVxJs1_TZ3uqt1z8-9NYYg'
         }).addTo(mymap);
-        var marker
+        var marker;
         function onMapClick(e) {
             if (marker != undefined) {
                 mymap.removeLayer(marker);
@@ -37,7 +37,8 @@
             var title = document.getElementById('loc_title').value;
             alert(title);
             localStorage.setItem("MyAppLocation", title);
-            localStorage.setItem("mapLoc", marker.latlng);
+            localStorage.setItem("latLoc", marker.latlng.lat);
+            localStorage.setItem("lngLoc", marker.latlng.lng);
         };
         function snapPicture() {
             navigator.camera.getPicture(successCallback, FailCallback, {

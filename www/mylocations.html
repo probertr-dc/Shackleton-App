@@ -6,8 +6,9 @@
             var pic_URI = localStorage.getItem("MyAppPicture");
             var pic = document.getElementById("pic_display");
             pic.src = pic_URI;
-            var loc = localStorage.getItem("mapLoc");
-            document.getElementById('mapLoc').textContent = loc;
+            var lat = localStorage.getItem("latLoc");
+            var long = localStorage.getItem("lngLoc");
+            document.getElementById('mapLoc').textContent = "Latitude: " + lat + " Longitude: " + lng;
         }
     </script>
     <h2 align='center'>My Locations</h2>
