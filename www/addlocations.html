@@ -54,7 +54,7 @@
             accessToken: 'pk.eyJ1IjoicnByb2JlcnQiLCJhIjoiY2tnN3dnMWxwMGJidjJybDM3M2hiOHpkciJ9.YVxJs1_TZ3uqt1z8-9NYYg'
         }).addTo(mymap);
         function onMapClick(e) {
-            alert("You clicked the map at " + e.latlng);
+            var marker = L.marker(e.latlng).addTo(mymap);
         }
         mymap.on('click', onMapClick);
     </script>
