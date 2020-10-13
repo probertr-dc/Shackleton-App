@@ -51,6 +51,11 @@
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoicnByb2JlcnQiLCJhIjoiY2tnN3dnMWxwMGJidjJybDM3M2hiOHpkciJ9.YVxJs1_TZ3uqt1z8-9NYYg'}).addTo(mymap);
+            accessToken: 'pk.eyJ1IjoicnByb2JlcnQiLCJhIjoiY2tnN3dnMWxwMGJidjJybDM3M2hiOHpkciJ9.YVxJs1_TZ3uqt1z8-9NYYg'
+        }).addTo(mymap);
+        function onMapClick(e) {
+            alert("You clicked the map at " + e.latlng);
+        }
+        mymap.on('click', onMapClick);
     </script>
 </ons-page>
