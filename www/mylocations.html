@@ -6,15 +6,14 @@
             var pic_URI = localStorage.getItem("MyAppPicture");
             var pic = document.getElementById("pic_display");
             pic.src = pic_URI;
-            var lat = localStorage.getItem("latLoc");
-            var long = localStorage.getItem("lngLoc");
-            document.getElementById('mapLoc').textContent = "Latitude: " + lat + " Longitude: " + lng;
+            var loc = localStorage.getItem("mapLoc");
+            document.getElementById("coords").textContent = loc;
         }
     </script>
     <h2 align='center'>My Locations</h2>
     <p><img id='pic_display' height="200"></p>
     <h3 id='my_loc'></h3>
-    <h3 id="mapLoc"></h3>
+    <h3 id="coords"></h3>
     <ons-button id="Reveal Location" onClick='show_location()'>
         Refresh
     </ons-button>
