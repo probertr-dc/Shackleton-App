@@ -53,8 +53,12 @@
         zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoicnByb2JlcnQiLCJhIjoiY2tnN3dnMWxwMGJidjJybDM3M2hiOHpkciJ9.YVxJs1_TZ3uqt1z8-9NYYg'
         }).addTo(mymap);
+        var marker
         function onMapClick(e) {
-            var marker = L.marker(e.latlng).addTo(mymap);
+            if (marker != undefined) {
+                mymap.removeLayer(marker);
+            }
+            marker = L.marker(e.latlng).addTo(mymap);
         }
         mymap.on('click', onMapClick);
     </script>
