@@ -38,8 +38,7 @@
             alert(title);
             localStorage.setItem("MyAppLocation", title);
             var latlng = marker.getLatLng();
-            localStorage.setItem("mapx", latlng.x);
-            localStorage.setItem("mapy", latlng.y);
+            alert(latlng);
         };
         function snapPicture() {
             navigator.camera.getPicture(successCallback, FailCallback, {
