@@ -9,7 +9,7 @@
             var ref = firebase.database().ref("users");
             // see if there is a user with same id as entered
             ref.child(username).once('value', function (snapshot) {
-                var exists = (snapshot.val() !== null);
+                var exists = (snapshot.val() != null);
                 if (exists) {
                     // if user exists then check password
                     if (snapshot.val().pass == password) {
