@@ -3,7 +3,7 @@
         function login() {
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
-            var ref = firebase.database().ref();
+            var ref = firebase.database().ref("users");
             ref.child("users").orderByChild(name).equalTo('username').on("value", function (snapshot) {
                 if (snapshot != null) {
                     if (password == snapshot.val().pass) {
