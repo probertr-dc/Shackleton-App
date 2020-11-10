@@ -10,7 +10,7 @@
             // see if there is a user with same id as entered
             ref.child(username).once('value', function (snapshot) {
                 var exists = (snapshot.val() != null);
-                if (exists) {
+                if (1) {
                     console.log(snapshot.val());
                     // if user exists then check password
                     if (snapshot.val().pass == password) {
@@ -20,11 +20,11 @@
                     }
                     else {
                         ons.notification.alert('Incorrect password');
- }
+                    }
                 }
                 else {
                     ons.notification.alert('Username unknown');
- }
+                }
             })
         }
     </script>
