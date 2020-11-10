@@ -7,13 +7,15 @@
             console.log(password)
             firebase.database().ref("/users/").orderByChild('name').equalTo(username).on("value", function (snapshot) {
                 if (snapshot.val() != null) {
-                    console.log(snapshot.val());
+                    snapshot.forEach(function (data) {
+                        console.log(snapshot.val());
                     if (password == snapshot.val().user1.pass) {
                         document.getElementById('navigator').resetToPage("shackleton.html");
                     }
                     else {
                         alert("Incorrect password");
                     }
+                    })                   
                 }
                 else {
                     alert("username unknown");
