@@ -8,7 +8,7 @@
             firebase.database().ref("/users/").orderByChild('name').equalTo(username).on("value", function (snapshot) {
                 if (snapshot.val() != null) {
                     console.log(snapshot.val());
-                    if (password == snapshot.val().pass) {
+                    if (password == snapshot.val().user1.pass) {
                         document.getElementById('navigator').resetToPage("shackleton.html");
                     }
                     else {
