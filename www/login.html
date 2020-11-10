@@ -1,10 +1,10 @@
 <ons-page id="login">
     <script>
         function login() {
-            var username = document.getElementById('username').textContent;
+            var username = document.getElementById('username').value;
             console.log(username);
-            var password = document.getElementById('password').textContent;
-            firebase.database.ref("/users/").orderByChild('name').equalTo('username').on("value", function (snapshot) {
+            var password = document.getElementById('password').value;
+            firebase.database().ref("/users/").orderByChild('name').equalTo('username').on("value", function (snapshot) {
                 if (snapshot.val() != null) {
                     if (password == snapshot.val().pass) {
                         document.getElementById('navigator').resetToPage("shackleton.html");
