@@ -4,11 +4,15 @@
             var username = document.getElementById('username').value;
             console.log(username);
             var password = document.getElementById('password').value;
-            console.log(password)
-            firebase.database().ref("/users/").orderByChild('name').equalTo(username).on("value", function (snapshot) {
+            console.log(password);
+            ref = firebase.database().ref("/users/");
+            ref.orderByChild('name').equalTo(username).on("value", function (snapshot) {
                 if (snapshot.val() != null) {
                     snapshot.forEach(function (data) {
                         if (password == data.val().pass) {
+                            if (username == ref.child("user1")) {
+                                console.log("admin");
+                            }
                             document.getElementById('navigator').resetToPage("shackleton.html");
                         }
                         else {
