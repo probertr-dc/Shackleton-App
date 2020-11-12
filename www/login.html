@@ -8,14 +8,15 @@
             firebase.database().ref("/users/").orderByChild('name').equalTo(username).on("value", function (snapshot) {
                 if (snapshot.val() != null) {
                     snapshot.forEach(function (data) {
-                        console.log(data.val());
-                    if (password == data.pass) {
-                        document.getElementById('navigator').resetToPage("shackleton.html");
-                    }
-                    else {
-                        alert("Incorrect password");
-                    }
-                    })                   
+                        console.log(password);
+                        console.log(data.val().pass);
+                        if (password == data.pass) {
+                            document.getElementById('navigator').resetToPage("shackleton.html");
+                        }
+                        else {
+                            alert("Incorrect password");
+                        }
+                    })
                 }
                 else {
                     alert("username unknown");
