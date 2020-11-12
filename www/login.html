@@ -15,7 +15,7 @@
                                     console.log('admin');
                                     var i = document.getElementById('pages');
                                     var c = document.createElement('ons-list-item');
-                                    c.onclick = "loadPage('admin-panel.html')";
+                                    c.onClick = function () { "loadPage('admin-panel.html')" };
                                     c.innerText = "Admin Panel";
                                     i.appendChild(c);
                                 }
