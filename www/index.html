@@ -31,6 +31,7 @@
 
         firebase.initializeApp(firebaseConfig);
         function loadPage(page) {
+            document.getElementById('menu').close();
             document.getElementById('navigator').pushPage(page);
         }
     </script>
