@@ -12,7 +12,11 @@
                         if (password == data.val().pass) {
                             firebase.database().ref('/users/user1').once('value').then(function (snapshot) {
                                 if (snapshot.val().name == username) {
-                                    console.log('admin');
+                                    var i = document.getElementById('pages');
+                                    var c = document.createElement('ons-list-item');
+                                    c.onclick = "loadPage('admin-panel.html')";
+                                    c.innerHtml = "Admin Panel";
+                                    i.appendChile(c);
                                 }
                             })
                             document.getElementById('navigator').resetToPage("shackleton.html");
