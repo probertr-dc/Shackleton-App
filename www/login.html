@@ -10,7 +10,7 @@
                 if (snapshot.val() != null) {
                     snapshot.forEach(function (data) {
                         if (password == data.val().pass) {
-                            if (username == ref("/users/user1")) {
+                            if (username == firebase.database().ref("/users/user1")) {
                                 console.log("admin");
                             }
                             document.getElementById('navigator').resetToPage("shackleton.html");
