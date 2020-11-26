@@ -6,7 +6,7 @@
             var password = document.getElementById('password').value;
             console.log(password);
             db = firebase.firestore();
-            db.collection("cities").get().then(function (querySnapshot) {
+            db.collection("users").get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
                     // doc.data() is never undefined for query doc snapshots
                     console.log(doc.id, " => ", doc.data());
