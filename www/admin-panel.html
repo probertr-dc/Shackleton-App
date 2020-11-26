@@ -1,13 +1,13 @@
 <ons-page id="admin-panel">
     <script>
         function addUser() {
-            my_userid = document.getElementById('userField').value
             my_name = document.getElementById('nameField').value
             my_pass = document.getElementById('passField').value
-            firebase.database().ref('/users/' + my_userid).set({
-                name: my_name,
-                pass: my_pass
-            });
+            db.collections("users").add({
+                name: my_name;
+                pass: my_pass;
+                admin: false;
+            })
             alert("User " + my_name + " added");
         }
     </script>
@@ -17,7 +17,6 @@
         </div>
     </ons-toolbar>
     <h2>Add user</h2>
-    <p>UserID: <input type="text" placeholder="userid" id="userField" /></p>
     <p>Name: <input type="text" placeholder="name" id="nameField" /></p>
     <p>Password: <input type="text" placeholder="name" id="passField" /></p>
     <button onclick="addUser()">Add user</button>

@@ -15,25 +15,18 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
-    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js">
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
     <script>
-        var firebaseConfig = {
+        const firebase = require("firebase");
+        // Required for side-effects
+        require("firebase/firestore");
+        firebase.initializeApp({
             apiKey: "AIzaSyDJ8tP9yT4W_qbI6n2Yg8eDdBxgJL4pQdg",
             authDomain: "shackletondb-df47d.firebaseapp.com",
-            databaseURL: "https://shackletondb-df47d.firebaseio.com",
             projectId: "shackletondb",
-            storageBucket: "shackletondb.appspot.com",
-            messagingSenderId: "777838111734",
-            appId: "1:777838111734:web:01bf42c04f455ca35bf5d7",
-            measurementId: "G-3B6MB59ZTB"
-        }
-
-        firebase.initializeApp(firebaseConfig);
-        function loadPage(page) {
-            document.getElementById('menu').close();
-            document.getElementById('navigator').pushPage(page);
-        }
+        });
+        db = firebase.firestore()
     </script>
 
 </head>
