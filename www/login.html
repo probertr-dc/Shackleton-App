@@ -6,7 +6,8 @@
             var password = document.getElementById('password').value;
             console.log(password);
             db.collection("users").where("name", "==", username).get().then(function (querySnapshot) {
-                querySnapshot.forEach(function (doc){
+                querySnapshot.forEach(function (doc) {
+                    console.log(doc.data());
                     if (doc.data().pass == password) {
                         if (doc.data().admin) {
                             var i = document.getElementById('pages');
