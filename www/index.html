@@ -23,6 +23,10 @@
             authDomain: "shackletondb-df47d.firebaseapp.com",
             projectId: "shackletondb-df47d"
         });
+        function loadPage(page) {
+            document.getElementById('menu').close();
+            document.getElementById('navigator').pushPage(page);
+        }
     </script>
 
 </head>
