@@ -5,7 +5,6 @@
             console.log(username);
             var password = document.getElementById('password').value;
             console.log(password);
-            db = firebase.firestore();
             db.collection("users").get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
                     console.log("in loop")

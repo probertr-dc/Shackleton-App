@@ -3,7 +3,6 @@
         function addUser() {
             my_name = document.getElementById('nameField').value;
             my_pass = document.getElementById('passField').value;
-            //var db = firebase.firestore();
             db.collection("users").add({
                 name: my_name,
                 pass: my_pass,
