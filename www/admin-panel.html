@@ -1,13 +1,13 @@
 <ons-page id="admin-panel">
     <script>
         function addUser() {
-            my_name = document.getElementById('nameField').value
-            my_pass = document.getElementById('passField').value
+            my_name = document.getElementById('nameField').value;
+            my_pass = document.getElementById('passField').value;
             db.collections("users").add({
-                name: my_name;
-                pass: my_pass;
-                admin: false;
-            })
+                name: my_name,
+                pass: my_pass,
+                admin: false
+            });
             alert("User " + my_name + " added");
         }
     </script>
