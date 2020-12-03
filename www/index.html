@@ -23,6 +23,7 @@
             authDomain: "shackletondb-df47d.firebaseapp.com",
             projectId: "shackletondb",
         });
+        console.log("aaaaaa");
         var db = firebase.firestore();
         db.collection("users").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
