@@ -19,7 +19,7 @@
                         if (doc.data().admin) {
                             var i = document.getElementById('pages');
                             var c = document.createElement('ons-list-item');
-                            c.onclick = function () { loadPage('admin-panel.html') };
+                            c.onclick = "loadPage('admin-panel.html')";
                             c.innerText = "Admin Panel";
                             i.appendChild(c);
                         }
